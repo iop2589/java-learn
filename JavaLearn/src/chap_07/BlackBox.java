@@ -55,4 +55,40 @@ public class BlackBox {
     System.out.println("서비스센터 (1588-1119) 로 연결 합니다.");
     canAutoReport = false;
   }
+
+  String getModelName () {
+    return modelName;
+  }
+
+  void setModelName (String modelName) {
+    this.modelName = modelName;
+  }
+
+  String getResolution () {
+    if (this.resolution == null || this.resolution.isEmpty()) {
+      return "판매자에게 문의하세요.";
+    } else {
+      return this.resolution;
+    }
+  }
+
+  int getPrice () {
+    return this.price;
+  }
+
+  void setPrice (int price) {
+    if (this.price < 100000) {
+      this.price = 100000;
+    } else {
+      this.price = price;
+    }
+  }
+
+  String getColor () {
+    return this.color;
+  }
+
+  void setColor (String color) {
+    this.color = color;
+  }
 }
