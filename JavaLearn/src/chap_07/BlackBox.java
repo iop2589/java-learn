@@ -112,4 +112,8 @@ public class BlackBox {
     this.color = color;
 
   }
+
+  void appendModelName(String modelName) {
+    this.modelName += modelName;
+  }
 }
