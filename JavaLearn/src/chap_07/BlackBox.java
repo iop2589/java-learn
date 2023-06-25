@@ -6,6 +6,25 @@ public class BlackBox {
   int price; // 가격
   String color; // 색상 - 인스턴스 변수
   static boolean canAutoReport = false; // 자동 신고 기능 - 클래스 변수
+  int serialNumber; // 시리얼 번호
+
+  static int count = 0; // 시리얼 번호 생성해주는 역할
+
+  BlackBox() {
+    System.out.println("기본생성자 호출");
+    this.serialNumber = ++count;
+    System.out.println("새로운 시리얼 넘버를 발급받았습니다 : " + this.serialNumber);
+  }
+
+  BlackBox (String modelName, String resolution, int price, String color) {
+    this(); // 기본 생성자 호출
+
+    System.out.println("사용자 정의 생성자 호출");
+    this.modelName = modelName;
+    this.resolution = resolution;
+    this.price = price;
+    this.color = color;
+  }
 
   void autoReport() {
     if (canAutoReport) {
@@ -54,5 +73,9 @@ public class BlackBox {
   static void callServiceCenter () {
     System.out.println("서비스센터 (1588-1119) 로 연결 합니다.");
     canAutoReport = false;
+  }
+
+  public void appendModelName(String modelName) {
+    this.modelName += modelName;
   }
 }
