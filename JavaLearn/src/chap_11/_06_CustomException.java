@@ -1,8 +1,5 @@
 package chap_11;
 
-import java.lang.reflect.Constructor;
-import java.sql.SQLOutput;
-
 public class _06_CustomException {
   public static void main(String[] args) {
     int age = 17; // 만 17세
